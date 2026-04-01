@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Major+Mono+Display&family=Rubik+Vinyl&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Major+Mono+Display&family=Rubik+Vinyl&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+   background-image: url('image/keith-misner-h0Vxgz5tyXA-unsplash.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+#heading{
+    font-family: "caveat", sans-serif;
+    font-size: 50px;
+    transition: font-size .5s ease;
+}
+#header-section{
+    background-color: rgb(92, 60, 45);
+    color: lightgray;
+    width: 100%;
+    height: 15vh;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#quote-section{
+    min-width: 600px;
+    min-height: 200px;
+    max-height: 70vh;
+    background-color: lightgrey;
+    border-radius: 8px;
+    margin-top: 20px;
+    opacity: .8;
+}
+#quote-container{
+    min-width: 100%;
+    height: 100%;
+}
+#top-description{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#author{
+    font-family: 'caveat', sans-serif;
+    font-size: 30px;
+    margin: 20px 0 0 20px;
+    }
+.bold-a{
+    font-family: 'Major Mono Display', 
+    sans-serif;
+    padding-left: 5px;
+    border-radius: 3px;
+    font-size: 25px;
+    color: #363636;
+}
+#category{
+    font-family: 'caveat', sans-serif;
+    font-size: 30px;
+    margin: 20px 20px 0 0;
+}
+#quote{
+    font-family: "Exo 2", sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin: 1.5em 10px;
+    padding: 1em 20px;
+    border-left: 5px solid rgb(160, 100, 75);
+    border-radius: 3px;
+    font-style: italic;
+    color: #363636;
+}
+#quote::before {
+  content: "“";
+  font-size: 2em;
+  vertical-align: -0.4em;
+}
+
+#quote::after {
+  content: "”";
+  font-size: 2em;
+  vertical-align: -0.4em;
+}
+#main{
+    height: 70vh;
+    padding: 5px;
+}
+#get{
+    width: fit-content;
+    height: fit-content;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: lightgrey;
+    cursor: pointer;
+    font-family: 'caveat';
+    font-size: 25px;
+    opacity: .8;
+}
+.footer {
+    height: 15vh;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(56, 42, 31);
+    color: #fff;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+#heading-icon{
+    width: 40px;
+    height: 40px;
+}
+#share{
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    background-color: transparent;
+    border: 1px solid rgba(39, 38, 38, 0.726);
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+#share:hover{
+    background-color: rgba(39, 38, 38, 0.726);
+    color: white;
+}
+
+@media screen and (max-width: 700px){
+    #quote-section{
+        width: 80%;
+        min-height: 200px;
+        background-color: lightgray;
+        margin-top: 20px;
+        transition: all .3s ease;
+        opacity: .7;
+    }
+    #header-section{
+        background-color: rgb(160, 100, 75);
+        width: 100%;
+        height: 20vh;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #heading{
+        font-family: "caveat", sans-serif;
+        font-size: 35px;
+        transition: font-size .5s ease;
+    }
+    #top-description{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: column;
+        transition: all 0.5s ease;
+    }
+}
