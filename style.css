@@ -140,6 +140,22 @@ body{
     background-color: rgba(39, 38, 38, 0.726);
     color: white;
 }
+#clipboard{
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    background-color: transparent;
+    border: 1px solid rgba(39, 38, 38, 0.726);
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+#clipboard:hover{
+    background-color: rgba(39, 38, 38, 0.726);
+    color: white;
+}
 
 @media screen and (max-width: 700px){
     #quote-section{

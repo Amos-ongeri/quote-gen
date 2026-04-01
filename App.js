@@ -25,7 +25,8 @@ const fetchQuotes = async () => {
         <h4 id = 'category'><strong class='bold-a'>Category:</strong>  ${quotes[0].category}</h4>
         </div>
         <blockquote id = 'quote'>${quotes[0].quote}</blockquote>
-         <button id="share" style="border-radius: 10px;"><i class="fa-regular fa-share-from-square fa-lg"></i></i></button>
+         <button id="share" title="share" style="border-radius: 10px;"><i class="fa-regular fa-share-from-square fa-lg"></i></i></button>
+         <button id="clipboard" title="copy to clipboard" style="border-radius: 10px;"><i class="fa-regular fa-clipboard fa-lg"></i></button>
         </div>`;
 
     }catch(e){
@@ -35,6 +36,10 @@ const fetchQuotes = async () => {
    
 };
 //web share API
+const saveQuote = (quote,author)=>{
+    const saveText = `"${quote}" — ${author}`;
+    return saveText;
+}
 const shareQuote = async (quote, author) => {
     const shareText = `"${quote}" — ${author}`;
 
@@ -46,26 +51,32 @@ const shareQuote = async (quote, author) => {
     })
     .then(() => console.log('Quote shared successfully!'))
     .catch((err) => console.error('Error sharing:', err));
-  }  else if (navigator.clipboard) {
-    try {
-      await navigator.clipboard.writeText(text);
-      alert('Quote copied to clipboard! Paste it anywhere you like.');
-    } catch {
-      alert('Sharing not supported and copying failed.');
-    }
   } else {
     alert('Sharing is not supported in this browser.');
   }
 };
+
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById('quote-container').addEventListener('click', (e) => {
-  if (e.target.closest('#share')) {
+    document.getElementById('quote-container').addEventListener('click', async (e) => {
+    if(e.target.closest('#share')) {
     const quote = document.getElementById('quote').innerText;
     const author = document.getElementById('author').innerText;
     console.log(quote);
     
     shareQuote(quote,author);
-  }
+    }
+
+    if(e.target.closest("#clipboard")){
+        const quote = document.getElementById('quote').innerText;
+        const author = document.getElementById('author').innerText;
+        const saveText = saveQuote(quote,author)
+        try{
+        await navigator.clipboard.writeText(saveText)
+        console.log("copied");
+        } catch (err) {
+            console.error("copy failed", err);
+        }
+    }
 });
     let button = document.querySelector('#get')
     let hasAnimated = false;
