@@ -20,6 +20,9 @@
 .history
 .ionide
 
+#gsap
+gsap/
+
 ### Node ###
 # Logs
 logs
